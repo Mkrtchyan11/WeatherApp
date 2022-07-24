@@ -1,14 +1,10 @@
 import React from 'react'
-// import { Outlet } from 'react-router'
-// import Select from 'react-select'
 import s from './ThisDayInfo.module.scss'
 import ThisDayItems from './ThisDayItems'
 import cloud from '../../../../assets/images/cloud.png';
 import { selectData } from '../../../../store/slices/data/data';
-// import { IndicatorSvgSelector } from '..IndicatorSvgSelector'
 
 function ThisDayInfo  ()  {
-  // const data = React.useSelector(selectData)
 const items = [{
   icon_id: 'temp', 
   name: 'Ջերմաստիճան: ',
