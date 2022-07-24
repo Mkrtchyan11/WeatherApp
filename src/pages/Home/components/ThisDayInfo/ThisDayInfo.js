@@ -2,7 +2,6 @@ import React from 'react'
 import s from './ThisDayInfo.module.scss'
 import ThisDayItems from './ThisDayItems'
 import cloud from '../../../../assets/images/cloud.png';
-import { selectData } from '../../../../store/slices/data/data';
 
 function ThisDayInfo  ()  {
 const items = [{
