@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux'
 import { selectData } from '../../../../store/slices/data/data'
 
 import s from './Days.module.scss'
-import Tabs from './Tabs';
 
 
 
@@ -19,7 +18,6 @@ const Days = () => {
 
   return (
       <>  
-      <Tabs />
   <div className={s.days}>
 
 {forecast.map((data, idx) => (

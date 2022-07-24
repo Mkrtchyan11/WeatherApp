@@ -26,7 +26,8 @@ const dataSlice = createSlice({
         loading: false,
         errors: false,
         countres: [],
-        corentCountry: {} 
+        corentCountry: {},
+        forecast: []
     },
     reducers: {
         
