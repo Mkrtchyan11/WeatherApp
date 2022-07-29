@@ -11,7 +11,9 @@ function App() {
   const dispatch = useDispatch()
   const data = useSelector(selectData)
   useEffect(() => {
-    dispatch(fatchData('Yerevan'))
+    if (!data.countres.length) {
+      dispatch(fatchData('Yerevan'))
+    }
   }, []);
   return (
     <div className="global-container">

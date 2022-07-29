@@ -20,10 +20,11 @@ const ThisDay = () => {
  <div className={s.top__block}>
 
    <div className={s.top_block_wrapper}> 
-   <div className={s.this__temp}>{Math.floor(data.corentCountry.main.temp)}°</div>
+   <div className={s.this__temp}>{Math.floor(data.corentCountry.temp)}°</div>
    <div className={s.this__day_name}>Այսօր</div>
    </div>
-   <GlobalSvgSelector id="sun" />
+   {/* <GlobalSvgSelector id="sun" /> */}
+   <img src={require(`../../../../assets/icons${data.corentCountry.icon}`)} alt="" />
  </div>
  <div className={s.bottom__block}>
    <div className={s.this__time}> Ժամանակ: 

@@ -4,13 +4,15 @@ import s from './Header.module.scss'
 import { GlobalSvgSelector } from '../../pages/Home/components/GlobalSvgSelector'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectSearchInput, typeText } from '../../store/slices/searchInput/serachInputSlice'
-import { fatchData } from '../../store/slices/data/data'
+import { changeCorentCountry, deleteCountry, fatchData, selectData } from '../../store/slices/data/data'
 
 
 
 const Header = () => {
 
   const searchInput = useSelector(selectSearchInput)
+  const data = useSelector(selectData).countres
+  const corentCountry = useSelector(selectData).corentCountry
 
   const dispatch = useDispatch()
 
@@ -33,12 +35,17 @@ const Header = () => {
               dispatch(typeText(''))
             }}
             className="form-wrapper">
-          <input value={searchInput} onChange={(e) => dispatch(typeText(e.target.value))} type='text' placeholder='Search'  className='submit'></input>
+          <input className="btn"  value={searchInput} onChange={(e) => dispatch(typeText(e.target.value))} type='text' placeholder='Search' ></input>
             <button type='Search' name='Search' className='search'>Search</button>
           </form>
           
+          <select className='select' value={corentCountry.name} onChange={(e) => dispatch(changeCorentCountry(e.target.value))}>
+            {
+            data.map(el => <option value={el.name} key={el.name} selected={el.name === corentCountry.name}>{el.name}</option>)
+            }
+          </select>
           </div>
-          <GlobalSvgSelector id="change-theme" />
+      <span style={{ cursor: 'pointer' }} onClick={() => dispatch(deleteCountry(corentCountry.name))} ><GlobalSvgSelector id="close" /></span>
        
         <Outlet />
     </div>

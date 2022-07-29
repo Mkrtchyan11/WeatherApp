@@ -11,20 +11,16 @@ import s from './Home.module.scss'
 const Home = () => {
  
 
-
   return (
-    <>
-    {/* <Popup /> */}
+    <> 
+    {/* <Popup/> */}
     <div className={s.home}>
       <div className={s.wrapper}>
-       
         <ThisDay  />
         <ThisDayInfo />
       </div>
       <Days />
-  
-  
-
+      
     </div>
   </>
   )
